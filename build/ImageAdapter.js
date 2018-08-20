@@ -43,6 +43,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var path = __importStar(require("path"));
+var canvas_1 = require("psdetch-utils/build/canvas");
 var ImageAdapter = /** @class */ (function () {
     function ImageAdapter() {
         this.acceptExtensions = [".jpeg", ".png", ".jpg"];
@@ -64,11 +65,8 @@ var ImageAdapter = /** @class */ (function () {
             width: imageElement.width,
             height: imageElement.height,
             getPreview: function (zoom) { return __awaiter(_this, void 0, void 0, function () {
-                var img;
                 return __generator(this, function (_a) {
-                    img = new Image(imageElement.width * zoom, imageElement.height * zoom);
-                    img.src = imageElement.src;
-                    return [2 /*return*/, img];
+                    return [2 /*return*/, canvas_1.zoomImg(imageElement, zoom)];
                 });
             }); },
             getLayers: function () {

@@ -1,5 +1,6 @@
 import { IProject, IPage, ILayer, IFileMeta, IFileBlob, IFileAdapter } from "psdetch-core";
 import * as path from "path";
+import { zoomImg } from "psdetch-utils/build/canvas";
 export class ImageAdapter implements IFileAdapter {
   acceptExtensions: string[] = [".jpeg", ".png", ".jpg"];
   fileTypeName: string = "Image File";
@@ -18,9 +19,7 @@ export class ImageAdapter implements IFileAdapter {
       width: imageElement.width,
       height: imageElement.height,
       getPreview:async (zoom: number) => {
-        const img=new Image(imageElement.width*zoom,imageElement.height*zoom);
-        img.src=imageElement.src;
-        return img;
+        return zoomImg(imageElement,zoom);
       },
       getLayers: (): Promise<ILayer[]> => {
         return Promise.resolve([] as ILayer[]);
