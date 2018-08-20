@@ -42,7 +42,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var cachePromise_1 = require("psdetch-utils/build/cachePromise");
 var path = __importStar(require("path"));
 var ImageAdapter = /** @class */ (function () {
     function ImageAdapter() {
@@ -59,15 +58,19 @@ var ImageAdapter = /** @class */ (function () {
         });
     };
     ImageAdapter.prototype.getPage = function (imageName, imageElement) {
+        var _this = this;
         return {
             name: imageName,
             width: imageElement.width,
             height: imageElement.height,
-            getPreview: function (zoom) {
-                return cachePromise_1.cachePromise(function () {
-                    return Promise.resolve(imageElement);
+            getPreview: function (zoom) { return __awaiter(_this, void 0, void 0, function () {
+                var img;
+                return __generator(this, function (_a) {
+                    img = new Image(imageElement.width * zoom, imageElement.height * zoom);
+                    img.src = imageElement.src;
+                    return [2 /*return*/, img];
                 });
-            },
+            }); },
             getLayers: function () {
                 return Promise.resolve([]);
             },

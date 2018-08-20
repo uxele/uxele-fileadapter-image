@@ -1,5 +1,4 @@
 import { IProject, IPage, ILayer, IFileMeta, IFileBlob, IFileAdapter } from "psdetch-core";
-import { cachePromise } from "psdetch-utils/build/cachePromise";
 import * as path from "path";
 export class ImageAdapter implements IFileAdapter {
   acceptExtensions: string[] = [".jpeg", ".png", ".jpg"];
@@ -18,10 +17,10 @@ export class ImageAdapter implements IFileAdapter {
       name: imageName,
       width: imageElement.width,
       height: imageElement.height,
-      getPreview: (zoom: number) => {
-        return cachePromise(() => {
-          return Promise.resolve(imageElement);
-        });
+      getPreview:async (zoom: number) => {
+        const img=new Image(imageElement.width*zoom,imageElement.height*zoom);
+        img.src=imageElement.src;
+        return img;
       },
       getLayers: (): Promise<ILayer[]> => {
         return Promise.resolve([] as ILayer[]);
