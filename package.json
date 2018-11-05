@@ -7,7 +7,7 @@
     "test": "karma start",
     "test:human": "INTERACTIVE=true karma start",
     "dev": "tsc -w",
-    "dep:local": "cd node_modules && rm -Rf ./psdetch-* && ln -s ../../psdetch-* ./",
+    "dep:local": "node script/depLocal.js",
     "build": "rm -Rf ./build && tsc && cpx './src/**/*.js' ./build"
 
   },
