@@ -1,4 +1,4 @@
-import { IProject, IFileMeta, IFileBlob, IFileAdapter } from "psdetch-core";
+import { IProject, IFileMeta, IFileBlob, IFileAdapter } from "uxele-core";
 export declare class ImageAdapter implements IFileAdapter {
     acceptExtensions: string[];
     fileTypeName: string;

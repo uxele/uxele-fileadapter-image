@@ -43,7 +43,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var path = __importStar(require("path"));
-var canvas_1 = require("psdetch-utils/build/canvas");
+var canvas_1 = require("uxele-utils/build/canvas");
 var ImageAdapter = /** @class */ (function () {
     function ImageAdapter() {
         this.acceptExtensions = [".jpeg", ".png", ".jpg"];
@@ -109,4 +109,4 @@ var ImageAdapter = /** @class */ (function () {
     return ImageAdapter;
 }());
 exports.ImageAdapter = ImageAdapter;
-//# sourceMappingURL=/Users/kxiang/work/projects/psdetch/v3-new/psdetch-fileadapter-image/src/ImageAdapter.js.map
+//# sourceMappingURL=/Users/kxiang/work/projects/psdetch/v3-new/uxele-fileadapter-image/src/ImageAdapter.js.map

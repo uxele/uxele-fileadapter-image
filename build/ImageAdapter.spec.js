@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var ImageAdapter_1 = require("./ImageAdapter");
-var loadRemoteFile_1 = require("psdetch-utils/build/loadRemoteFile");
+var loadRemoteFile_1 = require("uxele-utils/build/loadRemoteFile");
 describe("ImageAdapter", function () {
     var adapter = new ImageAdapter_1.ImageAdapter();
     it("should match with image file", function () {
@@ -170,4 +170,4 @@ describe("ImageAdapter", function () {
         }); });
     });
 });
-//# sourceMappingURL=/Users/kxiang/work/projects/psdetch/v3-new/psdetch-fileadapter-image/src/ImageAdapter.spec.js.map
+//# sourceMappingURL=/Users/kxiang/work/projects/psdetch/v3-new/uxele-fileadapter-image/src/ImageAdapter.spec.js.map
