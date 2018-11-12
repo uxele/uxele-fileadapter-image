@@ -1,5 +1,5 @@
 import { ImageAdapter } from "./ImageAdapter";
-import { loadRemoteFile } from "psdetch-utils/build/loadRemoteFile";
+import { loadRemoteFile } from "uxele-utils/build/loadRemoteFile";
 
 describe("ImageAdapter", () => {
   const adapter = new ImageAdapter();

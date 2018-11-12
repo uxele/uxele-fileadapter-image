@@ -1,6 +1,6 @@
-import { IProject, IPage, ILayer, IFileMeta, IFileBlob, IFileAdapter } from "psdetch-core";
+import { IProject, IPage, ILayer, IFileMeta, IFileBlob, IFileAdapter } from "uxele-core";
 import * as path from "path";
-import { zoomImg } from "psdetch-utils/build/canvas";
+import { zoomImg } from "uxele-utils/build/canvas";
 export class ImageAdapter implements IFileAdapter {
   acceptExtensions: string[] = [".jpeg", ".png", ".jpg"];
   fileTypeName: string = "Image File";
