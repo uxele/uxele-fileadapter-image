@@ -43,7 +43,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var path = __importStar(require("path"));
-var canvas_1 = require("uxele-utils/build/canvas");
 var ImageAdapter = /** @class */ (function () {
     function ImageAdapter() {
         this.acceptExtensions = [".jpeg", ".png", ".jpg"];
@@ -61,12 +60,13 @@ var ImageAdapter = /** @class */ (function () {
     ImageAdapter.prototype.getPage = function (imageName, imageElement) {
         var _this = this;
         return {
+            id: imageName,
             name: imageName,
             width: imageElement.width,
             height: imageElement.height,
-            getPreview: function (zoom) { return __awaiter(_this, void 0, void 0, function () {
+            getPreview: function () { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    return [2 /*return*/, canvas_1.zoomImg(imageElement, zoom)];
+                    return [2 /*return*/, imageElement];
                 });
             }); },
             getLayers: function () {

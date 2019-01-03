@@ -15,11 +15,12 @@ export class ImageAdapter implements IFileAdapter {
   }
   private getPage(imageName: string, imageElement: HTMLImageElement): IPage {
     return {
+      id:imageName,
       name: imageName,
       width: imageElement.width,
       height: imageElement.height,
-      getPreview:async (zoom: number) => {
-        return zoomImg(imageElement,zoom);
+      getPreview: async () => {
+        return imageElement;
       },
       getLayers: (): Promise<ILayer[]> => {
         return Promise.resolve([] as ILayer[]);
